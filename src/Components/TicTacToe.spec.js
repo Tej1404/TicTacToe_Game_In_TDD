@@ -73,6 +73,15 @@ describe("testing the functionality of the game",()=>{
 
     test("should display winner after succesful completion of the game",()=>{
         const winner= shallow(<TicTacToe/>);
-        expect(winner.find('h4').text()).toBeDefined;
+        winner.find("#btn1").simulate("click");
+        winner.find("#btn2").simulate("click");
+        winner.find("#btn3").simulate("click");
+        winner.find("#btn4").simulate("click");
+        winner.find("#btn5").simulate("click");
+        winner.find("#btn6").simulate("click");
+        winner.find("#btn7").simulate("click");
+        winner.find("#btn8").simulate("click");
+        winner.find("#btn9").simulate("click");
+        expect(winner.find('h4').text()).toHaveTextContent("winner : X");
     })
 })
